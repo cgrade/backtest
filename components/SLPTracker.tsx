@@ -257,8 +257,17 @@ export default function SLPTracker() {
   }
 
   const Lbl = ({t}: {t: string}) => <div style={{fontSize:"12px",color:"var(--color-text-secondary)",fontWeight:"500",marginBottom:"6px"}}>{t}</div>;
-  const iSty = {width:"100%",background:"var(--color-background-primary)",border:"0.5px solid var(--color-border-secondary)",borderRadius:"var(--border-radius-md)",padding:"7px 10px",color:"var(--color-text-primary)",fontSize:"13px",boxSizing:"border-box",fontFamily:"var(--font-geist-sans)"};
-
+  const iSty: React.CSSProperties = {
+  width: "100%",
+  background: "var(--color-background-primary)",
+  border: "0.5px solid var(--color-border-secondary)",
+  borderRadius: "var(--border-radius-md)",
+  padding: "7px 10px",
+  color: "var(--color-text-primary)",
+  fontSize: "13px",
+  boxSizing: "border-box",
+  fontFamily: "var(--font-geist-sans)"
+};
   function Bar({n,d,c}: {n: number; d?: number; c?: string}) {
     const p = d ? pct(n,d) : 100;
     return <div style={{height:"4px",background:"var(--color-border-tertiary)",borderRadius:"2px",margin:"5px 0"}}><div style={{width:`${p}%`,height:"100%",background:c||rateBg(p),borderRadius:"2px",transition:"width 0.5s"}}/></div>;
